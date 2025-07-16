@@ -1,14 +1,14 @@
 ### CONTAINER COMMANDS
 
 ```
-docker ps			        -> show containers runnning
+docker ps                   -> show containers runnning
 docker ps -a                -> show all continers (running or not)
 ```
 
 ```
 docker run <image_name>	                            	-> run image
 docker run <image_name:version>                     	-> pull and run image
-docker run -d <image_name>	                            -> run the container in detached mode
+docker run -d <image_name>                              -> run the container in detached mode
 docker run -p <hostport>:<containerport> <image_name>	-> setup a port
 docker run --name <new_name> <image_name>               -> run a container with a custom name
 docker run -e <enviroment_variable> = <value> <image>   -> set an enviroment variable
@@ -24,7 +24,7 @@ docker container prune                  -> delete all stopped containers
 ```
 
 ```
-docker logs <id_container>	            -> show container logs
+docker logs <id_container>              -> show container logs
 docker exec -it <id_container> <route>  -> enter the container
 ```
 
@@ -32,13 +32,13 @@ docker exec -it <id_container> <route>  -> enter the container
 
 ```
 docker login <REGISTRY_URL>         -> login to a registry
-docker pull <image_name>	        -> pull image from register
+docker pull <image_name>            -> pull image from register
 docker push <name>:<tag>            -> upload an image to a registry
 docker build <path>                 -> build a image from a Dockerfile
 ```
 
 ```
-docker images			            -> list images
+docker images                       -> list images
 docker rmi <name_image>             -> delete images
 ```
 
@@ -49,7 +49,7 @@ docker image tag <current_name>:<current_tag> <new_name>:<new_version>     -> cr
 ### NETWORKS COMMANDS
 
 ```
-docker network ls		                    -> list all networks 
+docker network ls                           -> list all networks 
 docker network create <name_new_network>    -> create a new network 
 ```
 
