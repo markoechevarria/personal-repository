@@ -23,6 +23,7 @@ A       ->  append text
 ```
 ```
 :wq     ->  write a file and quit
+```
 
 ## Chapter 2 
 
