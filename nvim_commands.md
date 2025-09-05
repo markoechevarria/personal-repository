@@ -33,9 +33,9 @@ d$      ->  delete to the end of the line
 ```
 ```
 list of motions:
-w       -> until the end of the line excluding its first character
-e       -> to the end of the current word including the last character 
-$       -> to the enf of the line including the last character
+w       -> to the start of the next word
+e       -> to the end of the current word
+$       -> to the enfd of the current line
 ```
 ```
 2w      ->  move the cursos two words forward
@@ -43,7 +43,7 @@ $       -> to the enf of the line including the last character
 0       ->  move the start of the line
 ```
 ```
-dw2     ->  delete the 2 consecutive words
+2dw    ->  delete the 2 consecutive words
 dd      ->  delete a whone line
 2dd     ->  delete two lines
 ```
