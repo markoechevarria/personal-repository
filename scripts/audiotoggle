@@ -1,0 +1,20 @@
+output=$(wpctl status)
+
+first_cut=$(sed -n '/Audio/,/Video/{p; /Video/q}' <<< "$output")
+second_cut=$(sed -n '/Sinks/,/Sources/{p; /Sources/q}' <<< "$first_cut")
+third_cut=$(echo "$second_cut" | grep "\[vol" )
+
+speaker=$(echo "$third_cut" | grep "Audio Speaker")
+earphones=$(echo "$third_cut" | grep -v "Audio" )
+current_device=$( echo "$third_cut" | grep "\*" )
+
+speaker_number=$(echo "$speaker" | awk 'match($0, /[0-9]+/) {print substr($0, RSTART, RLENGTH)}')
+earphones_number=$(echo "$earphones" | awk 'match($0, /[0-9]+/) {print substr($0, RSTART, RLENGTH)}')
+current_number=$(echo "$current_device" | awk 'match($0, /[0-9]+/) {print substr($0, RSTART, RLENGTH)}')
+
+if [[ "$current_number" == "$speaker_number" ]]; then
+	wpctl set-default "$earphones_number"
+else
+	wpctl set-default "$speaker_number"
+fi
+
